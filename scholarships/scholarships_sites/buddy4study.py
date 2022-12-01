@@ -56,12 +56,11 @@ re = response.json()
 data = re['scholarships']
 
 
-
 scholarships = []
 
 
 for el in data:
-    temp = [el['scholarshipName'], el['deadlineDate'], el['scholarshipMultilinguals'][0]['applicableFor'], el['logoFid']]
+    temp = [el['scholarshipName'], el['deadlineDate'], el['scholarshipMultilinguals'][0]['applicableFor'], 'https://buddy4study.com/'+el['pageSlug'], el['logoFid']]
     scholarships.append(temp)
 
 #print(len(scholarships))
@@ -69,4 +68,6 @@ for x in scholarships:
     print(f'SCHOLARSHIP NAME : {x[0]}')
     print(f'SCHOLARSHIP LAST DATE : {x[1]}')
     print(f'SCHOLARSHIP APPLICABLE FOR : {x[2]}')
+    print(f'SCHOLARSHIP LINK : {x[3]}')
+    print(f'SCHOLARSHIP IMAGE LINK : {x[4]}')
     print('-------------------------------------------------------------------------------')
