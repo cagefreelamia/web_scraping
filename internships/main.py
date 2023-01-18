@@ -3,7 +3,7 @@ from csv import writer
 
 data = list1
 
-with open("scholarships.csv", 'w', newline='') as f:
+with open("internships.csv", 'w', newline='') as f:
     the_writer = writer(f)
     header = ['Internship Title', 'Internship Start Date', 'Internnship Duration', "Stipend", 'Link']
     the_writer.writerow(header)
