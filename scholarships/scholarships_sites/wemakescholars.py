@@ -1,13 +1,15 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
-path = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 scholarships = []
 driver.get("https://www.wemakescholars.com/scholarship/search?nationality=64&study=2")
 time.sleep(1)
 elements = driver.find_elements(By.CLASS_NAME,"post")
+# print(elements)
 for el in elements:
     title = el.find_element(By.CLASS_NAME,"post-title")
     last_date = el.find_element(By.TAG_NAME, "span")
